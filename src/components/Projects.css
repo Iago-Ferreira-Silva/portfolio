@@ -1,0 +1,94 @@
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.proj-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+  transition: .25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.proj-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.proj-card p {
+  color: var(--muted);
+  font-size: .9rem;
+  flex-grow: 1;
+  margin-bottom: 16px;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.proj-tags span {
+  font-size: .72rem;
+  background: rgba(59, 130, 246, .12);
+  color: var(--accent2);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.proj-links {
+  display: flex;
+  gap: 16px;
+  font-size: .85rem;
+}
+
+.proj-links a {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent);
+}
+
+.proj-links a:hover {
+  color: var(--accent2);
+}
+
+.more-projects {
+  margin-top: 30px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+}
+
+.more-projects h3 {
+  font-size: 1rem;
+  color: var(--accent2);
+  margin-bottom: 16px;
+}
+
+.more-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.more-list a {
+  color: var(--text);
+  font-size: .9rem;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.more-list a:hover {
+  color: var(--accent2);
+}
