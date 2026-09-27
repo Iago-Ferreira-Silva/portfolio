@@ -7,7 +7,7 @@ function Header() {
   return (
     <header>
       <nav>
-        <div className="logo">Iago<span>.</span>dev</div>
+        <div className="logo">Iago<span>.</span>Dev</div>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li><a href="#sobre" onClick={() => setMenuOpen(false)}>Sobre</a></li>
