@@ -32,7 +32,7 @@ function Hero() {
 
             <a
               className="btn btn-outline"
-              href="https://www.linkedin.com/in/iago-ferreira-9278ab257/"
+              href="https://www.linkedin.com/in/iago-ferreira-silva-9278ab257/"
               target="_blank"
               rel="noopener noreferrer"
             >
