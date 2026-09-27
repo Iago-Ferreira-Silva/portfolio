@@ -1,0 +1,20 @@
+.contact-box {
+  background: linear-gradient(135deg, rgba(59, 130, 246, .1), rgba(139, 92, 246, .08));
+  border: 1px solid rgba(59, 130, 246, .25);
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+}
+
+.contact-box h2 {
+  margin-bottom: 12px;
+}
+
+.contact-box p {
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+.contact-btn-row {
+  justify-content: center;
+}
