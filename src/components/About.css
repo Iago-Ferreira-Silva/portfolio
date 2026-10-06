@@ -1,16 +1,17 @@
 .section-tag {
   color: var(--accent2);
   font-size: .85rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
   margin-bottom: 30px;
   font-weight: 800;
+  letter-spacing: -.5px;
 }
 
 .about-grid {
@@ -23,6 +24,7 @@ h2 {
 .about-grid p {
   color: var(--muted);
   margin-bottom: 16px;
+  line-height: 1.7;
 }
 
 .stats {
@@ -34,12 +36,20 @@ h2 {
 .stat {
   background: var(--card);
   border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
   border-radius: 14px;
   padding: 22px;
+  transition: .25s;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
 }
 
 .stat b {
-  font-size: 1.7rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.8rem;
   color: var(--accent2);
   display: block;
 }

@@ -47,3 +47,35 @@ img {
 section {
   padding: 90px 0;
 }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(59, 130, 246, .15), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(139, 92, 246, .12), transparent 60%),
+    var(--bg);
+}
+
+h1, h2, h3 {
+  font-family: 'Sora', 'Inter', sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

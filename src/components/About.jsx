@@ -1,9 +1,19 @@
+import { useReveal } from '../hooks/useReveal';
 import './About.css';
 
 function About() {
+  const [ref, visible] = useReveal();
+
+  const stats = [
+    { value: '11+', label: 'Projetos no GitHub' },
+    { value: '6 meses', label: 'Estágio AI Developer' },
+    { value: '2', label: 'Cursos superiores em andamento' },
+    { value: '10+', label: 'Tecnologias no dia a dia' },
+  ];
+
   return (
     <section id="sobre">
-      <div className="wrap about-grid">
+      <div className={`wrap about-grid reveal ${visible ? 'visible' : ''}`} ref={ref}>
         <div>
           <div className="section-tag">Sobre mim</div>
           <h2>Quem eu sou</h2>
@@ -24,22 +34,16 @@ function About() {
         </div>
 
         <div className="stats">
-          <div className="stat">
-            <b>11+</b>
-            <span>Projetos no GitHub</span>
-          </div>
-          <div className="stat">
-            <b>6 meses</b>
-            <span>Estágio AI Developer</span>
-          </div>
-          <div className="stat">
-            <b>2</b>
-            <span>Cursos superiores em andamento</span>
-          </div>
-          <div className="stat">
-            <b>10+</b>
-            <span>Tecnologias no dia a dia</span>
-          </div>
+          {stats.map((stat, i) => (
+            <div
+              className="stat"
+              key={stat.label}
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <b>{stat.value}</b>
+              <span>{stat.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

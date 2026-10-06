@@ -1,9 +1,14 @@
 footer {
-  border-top: 1px solid var(--border);
+  position: relative;
   padding: 30px 0;
   text-align: center;
   color: var(--muted);
   font-size: .85rem;
+}
+
+.footer-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 footer a {

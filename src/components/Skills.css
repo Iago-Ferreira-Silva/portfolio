@@ -7,13 +7,21 @@
 .skill-card {
   background: var(--card);
   border: 1px solid var(--border);
+  border-top: 2px solid var(--skill-accent, var(--accent));
   border-radius: 14px;
   padding: 22px;
+  transition: .25s;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -18px color-mix(in srgb, var(--skill-accent, var(--accent)) 60%, transparent);
 }
 
 .skill-card h3 {
+  font-family: 'Sora', sans-serif;
   font-size: .95rem;
-  color: var(--accent2);
+  color: var(--text);
   margin-bottom: 14px;
   text-transform: uppercase;
   letter-spacing: .5px;

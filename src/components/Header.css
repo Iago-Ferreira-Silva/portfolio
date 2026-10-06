@@ -4,9 +4,15 @@ header {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, .7);
+  background: rgba(10, 10, 10, .5);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid transparent;
+  transition: .3s;
+}
+
+header.scrolled {
+  background: rgba(10, 10, 10, .85);
+  border-bottom-color: var(--border);
 }
 
 nav {
@@ -19,6 +25,7 @@ nav {
 }
 
 .logo {
+  font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -34,13 +41,30 @@ nav {
 }
 
 .nav-links a {
+  position: relative;
   color: var(--muted);
   font-size: .95rem;
   transition: .2s;
+  padding-bottom: 2px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--accent2);
+  transition: width .25s ease;
 }
 
 .nav-links a:hover {
   color: var(--text);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .burger {

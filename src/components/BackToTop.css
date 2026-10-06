@@ -1,0 +1,43 @@
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: .25s;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  border-color: var(--accent);
+  color: var(--accent2);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -12px rgba(59, 130, 246, .5);
+}
+
+@media (max-width: 820px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}

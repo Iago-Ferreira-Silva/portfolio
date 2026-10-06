@@ -1,13 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Header.css';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 20);
+    }
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header>
+    <header className={scrolled ? 'scrolled' : ''}>
       <nav>
-        <div className="logo">Iago<span>.</span>Dev</div>
+        <div className="logo">Iago<span>.</span>dev</div>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li><a href="#sobre" onClick={() => setMenuOpen(false)}>Sobre</a></li>
