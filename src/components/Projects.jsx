@@ -68,7 +68,7 @@ function Projects() {
         </div>
 
         <div className="more-projects">
-          <div className="eyebrow">mais arquivos</div>
+          <div className="eyebrow">mais projetos</div>
           <div className="more-list">
             {moreProjects.map((p) => (
               <a href={p.url} target="_blank" rel="noopener noreferrer" key={p.label}>{p.label}</a>
