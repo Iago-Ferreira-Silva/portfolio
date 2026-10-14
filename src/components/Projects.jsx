@@ -1,3 +1,5 @@
+import useReveal from '../hooks/useReveal';
+
 const projects = [
   {
     file: 'estoque_if', ext: '.js',
@@ -37,8 +39,15 @@ const moreFiles = [
 ];
 
 export default function Projects() {
+  const [ref, visible] = useReveal();
+
   return (
-    <section id="projetos" aria-labelledby="projetos-h2">
+    <section
+      id="projetos"
+      aria-labelledby="projetos-h2"
+      ref={ref}
+      className={`reveal${visible ? ' is-visible' : ''}`}
+    >
       <div className="wrap">
         <span className="tag-line">// projetos</span>
         <h2 id="projetos-h2">Projetos em destaque</h2>

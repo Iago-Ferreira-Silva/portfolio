@@ -1,6 +1,15 @@
+import useReveal from '../hooks/useReveal';
+
 export default function Contact() {
+  const [ref, visible] = useReveal();
+
   return (
-    <section id="contato" aria-labelledby="contato-h2">
+    <section
+      id="contato"
+      aria-labelledby="contato-h2"
+      ref={ref}
+      className={`reveal${visible ? ' is-visible' : ''}`}
+    >
       <div className="wrap">
         <span className="tag-line">// contato</span>
         <h2 id="contato-h2">Vamos conversar?</h2>
@@ -29,7 +38,7 @@ export default function Contact() {
                   <path d="M8 11v5M8 8v.01M12 16v-3.5a1.5 1.5 0 0 1 3 0V16M12 12.5V16" />
                 </svg>
                 <a href="https://www.linkedin.com/in/iago-ferreira-silva-9278ab257" target="_blank" rel="noopener noreferrer">
-                  linkedin.com/in/iago-ferreira-silva
+                  linkedin.com/in/iago-ferreira
                 </a>
               </li>
               <li>

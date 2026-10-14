@@ -1,3 +1,5 @@
+import useReveal from '../hooks/useReveal';
+
 const skillGroups = [
   { title: 'frontend', tags: ['HTML5', 'CSS3', 'JavaScript', 'React', 'TypeScript', 'Bootstrap'] },
   { title: 'backend', tags: ['Node.js', 'Python', 'PHP', 'Streamlit'] },
@@ -8,8 +10,15 @@ const skillGroups = [
 ];
 
 export default function Skills() {
+  const [ref, visible] = useReveal();
+
   return (
-    <section id="skills" aria-labelledby="skills-h2">
+    <section
+      id="skills"
+      aria-labelledby="skills-h2"
+      ref={ref}
+      className={`reveal${visible ? ' is-visible' : ''}`}
+    >
       <div className="wrap">
         <span className="tag-line">// stack</span>
         <h2 id="skills-h2">Tecnologias que eu uso</h2>

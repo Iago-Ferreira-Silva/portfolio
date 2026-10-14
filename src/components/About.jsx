@@ -1,6 +1,15 @@
+import useReveal from '../hooks/useReveal';
+
 export default function About() {
+  const [ref, visible] = useReveal();
+
   return (
-    <section id="sobre" aria-labelledby="sobre-h2">
+    <section
+      id="sobre"
+      aria-labelledby="sobre-h2"
+      ref={ref}
+      className={`reveal${visible ? ' is-visible' : ''}`}
+    >
       <div className="wrap about-grid">
         <div>
           <span className="tag-line">// sobre</span>
