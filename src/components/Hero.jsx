@@ -1,54 +1,41 @@
-import avatarImg from '../assets/avatar.jpg';
-import { useReveal } from '../hooks/useReveal';
-import './Hero.css';
+import avatar from '../assets/avatar.jpg';
 
-const lines = [
-  { cmd: 'whoami', out: 'iago_ferreira_silva' },
-  { cmd: 'cat foco.txt', out: 'Front-End & Inteligência Artificial' },
-  { cmd: 'cat localizacao.txt', out: 'Crato, CE — Brasil' },
-];
-
-function Hero() {
-  const [ref, visible] = useReveal();
-
+export default function Hero() {
   return (
-    <section className="hero">
-      <div className={`wrap hero-grid reveal ${visible ? 'visible' : ''}`} ref={ref}>
+    <section className="hero" aria-label="Apresentação">
+      <div className="wrap hero-grid">
         <div className="hero-copy">
-          <h1>Construo interfaces que funcionam e fazem sentido.</h1>
+          <h1>Desenvolvedor <span className="mono-bit">Front-End</span><br />unindo código & IA</h1>
           <p className="lead">
-            Desenvolvedor Front-End unindo código e inteligência artificial
-            pra criar produtos intuitivos — do protótipo ao deploy.
+            Construo interfaces intuitivas, responsivas e funcionais, unindo Frontend e
+            Inteligência Artificial para criar soluções que fazem diferença.
           </p>
           <div className="btn-row">
-            <a className="btn btn-primary" href="#projetos">Ver projetos</a>
-            <a className="btn btn-outline" href="https://www.linkedin.com/in/iago-ferreira-silva-9278ab257" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a className="btn btn-outline" href="https://github.com/Iago-Ferreira-Silva" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a className="btn btn-primary" href="#projetos">ver projetos</a>
+            <a className="btn btn-outline" href="https://www.linkedin.com/in/iago-ferreira-silva-9278ab257" target="_blank" rel="noopener noreferrer">linkedin</a>
+            <a className="btn btn-outline" href="https://github.com/Iago-Ferreira-Silva" target="_blank" rel="noopener noreferrer">github</a>
           </div>
         </div>
 
-        <div className="terminal">
-          <div className="terminal-bar">
-            <span className="tdot" /><span className="tdot" /><span className="tdot" />
-            <span className="terminal-title mono">iago@portfolio: ~</span>
+        <div className="term" aria-hidden="true">
+          <div className="term-bar">
+            <span className="dot"></span><span className="dot"></span><span className="dot"></span>
+            <span className="term-title">iago@portfolio — zsh</span>
           </div>
-          <div className="terminal-body mono">
-            {lines.map((l) => (
-              <div className="term-row" key={l.cmd}>
-                <p><span className="prompt">$</span> {l.cmd}</p>
-                <p className="out">{l.out}</p>
-              </div>
-            ))}
-            <div className="term-row term-photo">
-              <p><span className="prompt">$</span> open avatar.jpg</p>
-              <img className="term-avatar" src={avatarImg} alt="Foto de Iago Ferreira Silva" />
+          <div className="term-body">
+            <p className="out"><span className="prompt">$</span> whoami</p>
+            <p className="out" style={{ marginBottom: 18 }}>
+              Iago Ferreira Silva — Dev Front-End &amp; IA<br />
+              <span className="comment"># disponível para novas oportunidades</span>
+            </p>
+            <p className="out"><span className="prompt">$</span> open avatar.jpg</p>
+            <div className="avatar-out">
+              <img className="avatar" src={avatar} alt="" />
             </div>
-            <p className="term-cursor-line"><span className="prompt">$</span> <span className="cursor">_</span></p>
+            <span className="cursor" aria-hidden="true"></span>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
-export default Hero;

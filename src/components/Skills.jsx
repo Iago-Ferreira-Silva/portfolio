@@ -1,31 +1,25 @@
-import { useReveal } from '../hooks/useReveal';
-import './Skills.css';
-
 const skillGroups = [
-  { title: 'Frontend', items: ['HTML5', 'CSS3', 'JavaScript', 'React', 'TypeScript', 'Bootstrap'] },
-  { title: 'Backend', items: ['Node.js', 'Python', 'PHP', 'Streamlit'] },
-  { title: 'Templates', items: ['Handlebars', 'Blade (Laravel)'] },
-  { title: 'Banco de dados', items: ['MySQL', 'MongoDB', 'SQLite'] },
-  { title: 'DevOps & Cloud', items: ['Docker', 'AWS'] },
-  { title: 'Ferramentas', items: ['Git', 'VSCode', 'Postman', 'Trello'] },
+  { title: 'frontend', tags: ['HTML5', 'CSS3', 'JavaScript', 'React', 'TypeScript', 'Bootstrap'] },
+  { title: 'backend', tags: ['Node.js', 'Python', 'PHP', 'Streamlit'] },
+  { title: 'templates', tags: ['Handlebars', 'Blade (Laravel)'] },
+  { title: 'banco de dados', tags: ['MySQL', 'MongoDB', 'SQLite'] },
+  { title: 'devops & cloud', tags: ['Docker', 'AWS'] },
+  { title: 'ferramentas', tags: ['Git', 'VSCode', 'Postman', 'Trello'] },
 ];
 
-function Skills() {
-  const [ref, visible] = useReveal();
-
+export default function Skills() {
   return (
-    <section id="skills">
-      <div className={`wrap reveal ${visible ? 'visible' : ''}`} ref={ref}>
-        <div className="eyebrow">stack</div>
-        <h2>Tecnologias que eu uso</h2>
-
+    <section id="skills" aria-labelledby="skills-h2">
+      <div className="wrap">
+        <span className="tag-line">// stack</span>
+        <h2 id="skills-h2">Tecnologias que eu uso</h2>
         <div className="skills-grid">
           {skillGroups.map((group) => (
             <div className="skill-card" key={group.title}>
               <h3>{group.title}</h3>
               <div className="tag-list">
-                {group.items.map((item) => (
-                  <span key={item}>{item}</span>
+                {group.tags.map((tag) => (
+                  <span className="tag" key={tag}>{tag}</span>
                 ))}
               </div>
             </div>
@@ -35,5 +29,3 @@ function Skills() {
     </section>
   );
 }
-
-export default Skills;

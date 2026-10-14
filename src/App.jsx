@@ -5,22 +5,21 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import BackToTop from './components/BackToTop';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <>
+      <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <main id="conteudo" tabIndex={-1}>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
-      <BackToTop />
     </>
   );
 }
-
-export default App;

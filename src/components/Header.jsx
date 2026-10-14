@@ -1,42 +1,32 @@
-import { useEffect, useState } from 'react';
-import './Header.css';
+import { useState } from 'react';
 
-function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+export default function Header() {
+  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 20);
-    }
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  function toggleMenu() {
+    setOpen((prev) => !prev);
+  }
 
   return (
-    <header className={scrolled ? 'scrolled' : ''}>
-      <nav>
-        <div className="logo mono">~/<span>iago</span></div>
-
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li><a href="#sobre" onClick={() => setMenuOpen(false)}>Sobre</a></li>
-          <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
-          <li><a href="#projetos" onClick={() => setMenuOpen(false)}>Projetos</a></li>
-          <li><a href="#contato" onClick={() => setMenuOpen(false)}>Contato</a></li>
+    <header>
+      <nav aria-label="Navegação principal">
+        <div className="logo">iago<span>.dev</span></div>
+        <ul className={`nav-links${open ? ' open' : ''}`} id="navLinks">
+          <li><a href="#sobre" onClick={() => setOpen(false)}>sobre.md</a></li>
+          <li><a href="#skills" onClick={() => setOpen(false)}>skills.json</a></li>
+          <li><a href="#projetos" onClick={() => setOpen(false)}>projetos/</a></li>
+          <li><a href="#contato" onClick={() => setOpen(false)}>contato.sh</a></li>
         </ul>
-
         <button
           className="burger"
-          aria-label="Menu"
-          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={open}
+          aria-controls="navLinks"
+          onClick={toggleMenu}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </nav>
     </header>
   );
 }
-
-export default Header;
