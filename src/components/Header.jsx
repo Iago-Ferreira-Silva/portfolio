@@ -16,7 +16,7 @@ function Header() {
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <nav>
-        <div className="logo">Iago<span>.</span>dev</div>
+        <div className="logo mono">~/<span>iago</span></div>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li><a href="#sobre" onClick={() => setMenuOpen(false)}>Sobre</a></li>

@@ -8,7 +8,6 @@ function Contact() {
     <section id="contato">
       <div className="wrap">
         <div className={`contact-box reveal ${visible ? 'visible' : ''}`} ref={ref}>
-          <div className="contact-glow" />
           <h2>Vamos conversar?</h2>
           <p>
             Estou aberto a novas oportunidades na área de programação, com

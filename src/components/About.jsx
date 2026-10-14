@@ -15,7 +15,7 @@ function About() {
     <section id="sobre">
       <div className={`wrap about-grid reveal ${visible ? 'visible' : ''}`} ref={ref}>
         <div>
-          <div className="section-tag">Sobre mim</div>
+          <div className="eyebrow">sobre</div>
           <h2>Quem eu sou</h2>
 
           <p>
